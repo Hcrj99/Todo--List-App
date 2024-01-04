@@ -1,0 +1,29 @@
+.todosearch__search{
+	width: 80%;
+	height: auto;
+	margin: 0 auto;
+	margin-top: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.todosearch__input {
+	width: 95%;
+	max-width: 700px;
+	height: 25px;
+	border-radius: 20px;
+	text-align: center;
+	border: 1px solid;
+	animation: changeColor 3s infinite;
+	box-shadow: 0 0 15px rgb(255, 60, 0);
+}
+
+@keyframes changeColor {
+	0% {border-color: rgb(255, 50, 0);}
+	25% {border-color: rgb(255, 100, 0);}
+	50% {border-color: rgb(255, 150, 0);}
+	75% {border-color: rgb(255, 110, 0);}
+	100% {border-color:rgb(255, 60, 0);}
+}

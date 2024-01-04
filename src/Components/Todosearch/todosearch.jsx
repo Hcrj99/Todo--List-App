@@ -1,10 +1,10 @@
+import './todosearch.css'
 
 function TodoSearch () {
 	return (
-		<>
-		<input placeholder='Search ToDo'></input>
-		<span>find</span>
-		</>
+		<div className='todosearch__search'>
+		<input placeholder='Search ToDo' className='todosearch__input'></input>
+		</div>
 	);
 }
 
