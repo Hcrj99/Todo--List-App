@@ -1,5 +1,5 @@
 import { TodoAddButton } from './Components/Todoadd/todoadd';
-import { TodoChart } from './Components/Todochart/todchart';
+import { TodoChart } from './Components/Todochart/todochart';
 import { TodoCounter } from './Components/Todocounter/todocounter';
 import { TodoItem } from './Components/Todoitem/todoitem';
 import { TodoSearch } from './Components/Todosearch/todosearch';
@@ -12,6 +12,8 @@ const defaultTodos = [
   { text: 'Todo3', completed: false, description: 'todo today', type: 'sports'},
   { text: 'Todo4', completed: false, description: 'todo today', type: 'sports'},
   { text: 'Todo5', completed: false, description: 'todo today', type: 'sports'},
+  { text: 'Todo6', completed: false, description: 'todo today', type: 'sports'},
+  { text: 'Todo7', completed: false, description: 'todo today', type: 'sports'},
 ]
 
 function App() {

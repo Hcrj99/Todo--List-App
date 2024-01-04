@@ -1,0 +1,18 @@
+.todochart__container {
+	width: 95%;
+	max-width: 700px;
+	height: 500px;
+	margin: 30px auto;
+	overflow: auto;
+	border: 2px solid rgb(39, 22, 0);
+	border-radius: 5px;
+}
+
+.todochart__container::-webkit-scrollbar {
+	width: 2px;
+}
+
+.todochart__container::-webkit-scrollbar-thumb {
+	background-color: rgb(219, 62, 0);
+	border-radius: 5px;
+}
