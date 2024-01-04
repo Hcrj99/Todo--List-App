@@ -7,3 +7,32 @@
 .html {
 	font-size: 62.5%;
 }
+
+body {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(26, 20, 24);
+}
+
+#root {
+	width: 95%;
+	max-width: 900px;
+	height: auto;
+	margin-top: 35px;
+	border: 3px solid;
+	border-radius: 10px;
+	animation: changeColor 3s infinite;
+	box-shadow: 1px 5px 30px rgb(255, 60, 0);;
+}
+
+@keyframes changeColor {
+	0% {border-color: rgb(255, 50, 0);}
+	25% {border-color: rgb(255, 100, 0);}
+	50% {border-color: rgb(255, 150, 0);}
+	75% {border-color: rgb(255, 110, 0);}
+	100% {border-color:rgb(255, 60, 0);}
+}
+
+
