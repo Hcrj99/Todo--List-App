@@ -1,0 +1,29 @@
+.todoitem__container {
+  width: 90%;
+	max-width: 700px;
+	height: 100px;
+	margin: 0 auto;
+	display: flex;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content:space-between;
+	border: 2px solid ;
+	border-radius: 5px;
+	font-size: 1.1rem;
+	font-family: 'Indie Flower', cursive;
+	animation: changeColor 3s infinite;
+	background-color: #b35b18;
+	color: azure;
+}
+
+@keyframes changeColor {
+	0% {border-color: rgb(255, 50, 0);}
+	25% {border-color: rgb(255, 100, 0);}
+	50% {border-color: rgb(255, 150, 0);}
+	75% {border-color: rgb(255, 110, 0);}
+	100% {border-color:rgb(255, 60, 0);}
+}
+
+
