@@ -1,0 +1,40 @@
+.add__contanier {
+    width: 95%;
+    height: auto;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.button__contanier {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 6rem;
+    transform: rotate(0);
+    transform: .2s ease;
+    background-color: rgb(204, 78, 6);
+	animation: changeColor 3s infinite;
+    color: rgb(255, 209, 2);
+	box-shadow: 0 0 10px rgb(255, 60, 0);
+}
+
+.button__contanier:hover{
+    transform: rotate(224deg);
+}
+
+@keyframes changeColor {
+	0% {border-color: rgb(255, 50, 0);}
+	25% {border-color: rgb(255, 100, 0);}
+	50% {border-color: rgb(255, 150, 0);}
+	75% {border-color: rgb(255, 110, 0);}
+	100% {border-color:rgb(255, 60, 0);}
+}

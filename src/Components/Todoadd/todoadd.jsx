@@ -1,9 +1,10 @@
+import './todoadd.css'
 
 function TodoAddButton () {
 	return(
-	<>
-	<button>+</button>
-	</>
+	<div className='add__contanier'>
+	<button className='button__contanier'>+</button>
+	</div>
 	);
 }
 
