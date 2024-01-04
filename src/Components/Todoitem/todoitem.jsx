@@ -3,7 +3,9 @@ function TodoItem () {
 	return(
 		<li>
 		<span>V</span>
-		<p>hi</p>
+		<p>title</p>
+		<p>Description</p>
+		<span>type</span>
 		<span>x</span>
 		</li>
 	);
