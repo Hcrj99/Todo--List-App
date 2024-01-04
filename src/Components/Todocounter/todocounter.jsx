@@ -1,11 +1,13 @@
+import './todocounter.css'
 
 function TodoCounter( { todoCompleted, totalTodo } ) {
 	return (
 		<>
-			<h1>
+			<h1 className='todocounter__app'>ToDo APP</h1>
+			<h2 className='todocounter__title'>
 			Completed {todoCompleted} / {totalTodo} ToDo's
-			</h1>
 			<progress id='progress' max={totalTodo} value={todoCompleted}>{todoCompleted}</progress>
+			</h2>
 		</>
 	);
 }

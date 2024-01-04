@@ -1,0 +1,42 @@
+.todocounter__app {
+	font-family: 'Bungee Spice', sans-serif;
+	text-align: center;
+	font-size: 3.5rem;
+}
+
+.todocounter__title {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	font-family: 'Bungee Spice', sans-serif;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.3rem;
+	margin-bottom: 20px;
+}
+
+#progress {
+	width: 200px;
+	height: 20px;
+	border: 1px solid rgb(255, 136, 0);
+	border-radius: 5px;
+	box-shadow: 0px 0px 20px rgb(255, 60, 0);
+}
+
+/* Cambio de color para diferentes valores */
+#progress::-webkit-progress-value {
+	background: linear-gradient(to right, red, rgb(255, 115, 0), rgb(255, 217, 0)); /* Gradiente de colores */
+	border-radius: 5px;
+	
+}
+  
+#progress::-moz-progress-bar {
+	background: linear-gradient(to right, red, rgb(255, 115, 0), rgb(255, 217, 0)); /* Gradiente de colores */
+	border-radius: 5px;
+}
+  
+#progress::-ms-fill {
+	background: linear-gradient(to right, red, rgb(255, 115, 0), rgb(255, 217, 0)); /* Gradiente de colores */
+	border-radius: 5px;
+}
