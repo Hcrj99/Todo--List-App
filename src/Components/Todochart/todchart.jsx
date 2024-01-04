@@ -1,8 +1,8 @@
 
-function TodoChart (props) {
+function TodoChart ( { children } ) {
 	return(
 		<ul>
-			{props.children}
+			{children}
 		</ul>
 
 	);

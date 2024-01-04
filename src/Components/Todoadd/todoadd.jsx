@@ -1,5 +1,5 @@
 
-function TodoAdd () {
+function TodoAddButton () {
 	return(
 	<>
 	<button>+</button>
@@ -7,4 +7,4 @@ function TodoAdd () {
 	);
 }
 
-export { TodoAdd };
+export { TodoAddButton };

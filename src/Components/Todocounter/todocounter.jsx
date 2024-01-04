@@ -1,11 +1,11 @@
 
-function TodoCounter() {
+function TodoCounter( { todoCompleted, totalTodo } ) {
 	return (
 		<div>
 			<h1>
-			Completed 3 / 5 ToDos
+			Completed {todoCompleted} / {totalTodo} ToDo's
 		</h1>
-		<progress id='progress' max={5} value={3}>3</progress>
+		<progress id='progress' max={totalTodo} value={todoCompleted}>{todoCompleted}</progress>
 		</div>
 	);
 }
