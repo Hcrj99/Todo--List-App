@@ -1,11 +1,11 @@
 
-function TodoItem () {
+function TodoItem ( { text, completed , description, type } ) {
 	return(
 		<li>
 		<span>V</span>
-		<p>title</p>
-		<p>Description</p>
-		<span>type</span>
+		<p>{text}</p>
+		<p>{description}</p>
+		<span>{type}</span>
 		<span>x</span>
 		</li>
 	);
