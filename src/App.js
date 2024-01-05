@@ -3,6 +3,7 @@ import { TodoChart } from './Components/Todochart/todochart';
 import { TodoCounter } from './Components/Todocounter/todocounter';
 import { TodoItem } from './Components/Todoitem/todoitem';
 import { TodoSearch } from './Components/Todosearch/todosearch';
+import { useLocalStorage } from './hooks/uselocalstorage';
 import './styles/App.css';
 import React from 'react';
 
@@ -17,30 +18,6 @@ import React from 'react';
 // ];
 // localStorage.setItem('TODO_APP_v1', JSON.stringify(defaultTodos));
 // localStorage.removeItem('TODO_APP_v1');
-
-
-function useLocalStorage (storageName, initialValue) {
-  //local storage section
-  const localStorageItem = localStorage.getItem(storageName);//initial todos in storage
-
-  let parseStorage = [];
-
-  if (!localStorageItem) {
-    localStorage.setItem(storageName, JSON.stringify(initialValue));//save empty string
-    parseStorage = initialValue;
-  } else {
-    parseStorage = JSON.parse(localStorageItem);//string to array
-  }
-
-  const [storage, setStorage] = React.useState(parseStorage);
-
-  const saveStorage = (newStorage) => {
-   localStorage.setItem(storageName, JSON.stringify(newStorage));
-   setStorage(newStorage);
- };
-
-  return [storage, saveStorage];
-}
 
 
 function App() {
