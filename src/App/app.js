@@ -1,10 +1,10 @@
-import { TodoAddButton } from './Components/Todoadd/todoadd';
-import { TodoChart } from './Components/Todochart/todochart';
-import { TodoCounter } from './Components/Todocounter/todocounter';
-import { TodoItem } from './Components/Todoitem/todoitem';
-import { TodoSearch } from './Components/Todosearch/todosearch';
-import { useLocalStorage } from './hooks/uselocalstorage';
-import './styles/App.css';
+import { TodoAddButton } from '../Components/Todoadd/todoadd';
+import { TodoChart } from '../Components/Todochart/todochart';
+import { TodoCounter } from '../Components/Todocounter/todocounter';
+import { TodoItem } from '../Components/Todoitem/todoitem';
+import { TodoSearch } from '../Components/Todosearch/todosearch';
+import { useLocalStorage } from '../hooks/uselocalstorage';
+import '../styles/App.css';
 import React from 'react';
 
 // const defaultTodos = [
