@@ -1,6 +1,6 @@
 import './todoitem.css'
 
-function TodoItem ( { text, completed , type, onComplete } ) {
+function TodoItem ( { text, completed , type, onComplete, onDelete } ) {
 	return(
 		<div className='todoitem__container'>
 		<span
@@ -8,7 +8,8 @@ function TodoItem ( { text, completed , type, onComplete } ) {
 		onClick={onComplete}>V</span>
 		<p className={`todoitem__text ${completed && 'todoitem__text-completed'}`}>{text}</p>
 		<p>{type}</p>
-		<span className='todoitem__delete'>x</span>
+		<span className='todoitem__delete'
+		onClick={onDelete}>x</span>
 		</div>
 	);
 }

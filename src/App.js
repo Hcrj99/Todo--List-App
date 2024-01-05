@@ -45,6 +45,14 @@ function App() {
   };
 
   //delete todos
+  const deleteTodo = (text) => {
+    const newTodos = [...todos];//copy todos
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text == text
+    );
+    newTodos.splice(todoIndex,1);//delete todo
+    setTodo(newTodos);
+  };
 
   return (
     <React.Fragment>
@@ -57,6 +65,7 @@ function App() {
           text={todo.text}
           onComplete={() => completeTodo(todo.text)}
           completed={todo.completed}
+          onDelete={() => deleteTodo(todo.text)}
           type={todo.type}
           />
         )}
