@@ -1,18 +1,19 @@
 .todoitem__container {
   width: 90%;
 	max-width: 700px;
-	height: 100px;
+	min-height: 100px;
 	margin: 0 auto;
 	display: flex;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	flex-wrap: wrap;
 	align-items: center;
-	justify-content:space-between;
+	justify-content: space-between;
 	border: 2px solid ;
 	border-radius: 5px;
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 	font-family: 'Indie Flower', cursive;
+	font-weight: bold;
 	animation: changeColor 3s infinite;
 	background-color: #b35b18;
 	color: azure;
@@ -24,6 +25,57 @@
 	50% {border-color: rgb(255, 150, 0);}
 	75% {border-color: rgb(255, 110, 0);}
 	100% {border-color:rgb(255, 60, 0);}
+}
+
+.todoitem__dcompleted {
+	width: 30px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	user-select: none;
+}
+
+.todoitem__dcompleted:hover {
+	transform: scale(1.6);
+	color: rgb(0, 255, 0);
+}
+
+.todoitem__completed {
+	color: rgb(255, 166, 0);
+}
+
+.todoitem__completed:hover {
+	transform: scale(1.6);
+	color: rgb(255, 166, 0);
+}
+
+.todoitem__text {
+	max-width: 200px;
+	height: auto;
+	display: flex;
+	align-items: center;
+	overflow-wrap: anywhere;
+}
+
+.todoitem__text-completed {
+	text-decoration: line-through;
+	color: rgb(255, 166, 0);
+}
+
+.todoitem__delete {
+	width: 30px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.todoitem__delete:hover{
+	transform: scale(1.6);
+	color: red;
 }
 
 
