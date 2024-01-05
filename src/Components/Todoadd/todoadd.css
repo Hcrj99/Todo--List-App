@@ -20,7 +20,6 @@
     cursor: pointer;
     font-size: 6rem;
     transform: rotate(0);
-    transform: .2s ease;
     background-color: rgb(204, 78, 6);
 	animation: changeColor 3s infinite;
     color: rgb(255, 209, 2);
