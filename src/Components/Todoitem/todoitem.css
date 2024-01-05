@@ -39,7 +39,7 @@
 
 .todoitem__dcompleted:hover {
 	transform: scale(1.6);
-	color: rgb(0, 255, 0);
+	color: rgb(255, 251, 0);
 }
 
 .todoitem__completed {

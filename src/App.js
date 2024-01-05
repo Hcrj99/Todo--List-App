@@ -35,7 +35,14 @@ function App() {
   );
 
   //complete todos
-
+  const completeTodo = (text) => {
+    const newTodos = [...todos];//copy todos
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text == text
+    );
+    newTodos[todoIndex].completed = true;
+    setTodo(newTodos);
+  };
 
   //delete todos
 
@@ -48,6 +55,7 @@ function App() {
           <TodoItem 
           key={todo.text} 
           text={todo.text}
+          onComplete={() => completeTodo(todo.text)}
           completed={todo.completed}
           type={todo.type}
           />
