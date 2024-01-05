@@ -17,8 +17,9 @@
 	border-radius: 20px;
 	text-align: center;
 	border: 1px solid;
-	font-size: 1rem;
-	font-family: 'Bebas Neue', sans-serif;
+	font-size: 1.2rem;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-weight: bold;
 	color: rgb(218, 69, 0);
 	animation: changeColor 3s infinite;
 	box-shadow: 0 0 15px rgb(255, 60, 0);

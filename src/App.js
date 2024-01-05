@@ -9,7 +9,7 @@ import React from 'react';
 const defaultTodos = [
   { text: 'Todo1', completed: true, description: 'todo today', type: 'sports'},
   { text: 'Todo2', completed: false, description: 'todo today', type: 'sports'},
-  { text: 'Todo3', completed: false, description: 'todo today', type: 'sports'},
+  { text: 'Todo3', completed: true, description: 'todo today', type: 'sports'},
   { text: 'Todo4', completed: false, description: 'todo today', type: 'sports'},
   { text: 'Todo5', completed: false, description: 'todo today', type: 'sports'},
   { text: 'Todo6', completed: false, description: 'todo today', type: 'sports'},
@@ -18,20 +18,28 @@ const defaultTodos = [
 
 function App() {
   const [search, setSearch] = React.useState('');//state to todoSearch
-  const [todo, setTodo] = React.useState(defaultTodos);//state to todoItem
+  const [todos, setTodo] = React.useState(defaultTodos);//state to todoItem
   
-  const completedTodos = todo.filter( (todoCompleted) => 
+  //completed todo + total todo
+  const completedTodos = todos.filter( (todoCompleted) => 
     !!todoCompleted.completed
   ).length; 
+  const totalTodos = todos.length;
 
-  const totalTodos = todo.length;
+  //search todos write by user
+  const searchTodos = todos.filter( (todoSearch) => {
+    const lowerTodoSearch = todoSearch.text.toLocaleLowerCase();
+    const lowerSeach = search.toLocaleLowerCase()
+    return lowerTodoSearch.includes(lowerSeach);//it keeps showing all because it returns true to an empty string
+  }
+  );
 
   return (
     <React.Fragment>
       <TodoCounter todoCompleted={completedTodos} totalTodo={totalTodos} />
       <TodoSearch search={search} setSearch={setSearch}/>
       <TodoChart>
-        {defaultTodos.map( todo => 
+        {searchTodos.map( todo => 
           <TodoItem 
           key={todo.text} 
           text={todo.text}
