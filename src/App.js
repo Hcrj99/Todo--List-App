@@ -6,19 +6,36 @@ import { TodoSearch } from './Components/Todosearch/todosearch';
 import './styles/App.css';
 import React from 'react';
 
-const defaultTodos = [
-  { text: 'Todo1', completed: true, type: 'sports'},
-  { text: 'Todo2', completed: false, type: 'sports'},
-  { text: 'Todo3', completed: true, type: 'sports'},
-  { text: 'Todo4', completed: false, type: 'sports'},
-  { text: 'Todo5', completed: false, type: 'sports'},
-  { text: 'Todo6', completed: false, type: 'sports'},
-  { text: 'Todo7', completed: false, type: 'sports'},
-]
+// const defaultTodos = [
+//   { text: 'Todo1', completed: true, type: 'sports'},
+//   { text: 'Todo2', completed: false, type: 'sports'},
+//   { text: 'Todo3', completed: true, type: 'sports'},
+//   { text: 'Todo4', completed: false, type: 'sports'},
+//   { text: 'Todo5', completed: false, type: 'sports'},
+//   { text: 'Todo6', completed: false, type: 'sports'},
+//   { text: 'Todo7', completed: false, type: 'sports'},
+// ];
+// localStorage.setItem('TODO_APP_v1', JSON.stringify(defaultTodos));
+// localStorage.removeItem('TODO_APP_v1');
+
+
 
 function App() {
+  //local storage section
+  const localStorageTodos = localStorage.getItem('TODO_APP_v1');//initial todos in storage
+
+  let parseTodos = [];
+
+  if (!localStorageTodos) {
+    localStorage.setItem('TODO_APP_v1', JSON.stringify([]));//save empty string
+    parseTodos = [];
+  } else {
+    parseTodos = JSON.parse(localStorageTodos);//string to array
+  }
+
+
   const [search, setSearch] = React.useState('');//state to todoSearch
-  const [todos, setTodo] = React.useState(defaultTodos);//state to todoItem
+  const [todos, setTodo] = React.useState(parseTodos);//state to todoItem
   
   //completed todo + total todo
   const completedTodos = todos.filter( (todoCompleted) => 
@@ -34,6 +51,11 @@ function App() {
   }
   );
 
+  const saveTodoState = (newTodos) => {
+    localStorage.setItem('TODO_APP_v1', JSON.stringify(newTodos));
+    setTodo(newTodos);
+  };
+
   //complete todos
   const completeTodo = (text) => {
     const newTodos = [...todos];//copy todos
@@ -41,7 +63,7 @@ function App() {
       (todo) => todo.text == text
     );
     newTodos[todoIndex].completed = true;
-    setTodo(newTodos);
+    saveTodoState(newTodos);
   };
 
   //delete todos
@@ -51,7 +73,7 @@ function App() {
       (todo) => todo.text == text
     );
     newTodos.splice(todoIndex,1);//delete todo
-    setTodo(newTodos);
+    saveTodoState(newTodos);
   };
 
   return (

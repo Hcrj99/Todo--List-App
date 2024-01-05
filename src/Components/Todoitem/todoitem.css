@@ -44,6 +44,7 @@
 
 .todoitem__completed {
 	color: rgb(255, 166, 0);
+	transform: rotate(15deg);
 }
 
 .todoitem__completed:hover {
