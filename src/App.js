@@ -19,23 +19,33 @@ import React from 'react';
 // localStorage.removeItem('TODO_APP_v1');
 
 
-
-function App() {
+function useLocalStorage (storageName, initialValue) {
   //local storage section
-  const localStorageTodos = localStorage.getItem('TODO_APP_v1');//initial todos in storage
+  const localStorageItem = localStorage.getItem(storageName);//initial todos in storage
 
-  let parseTodos = [];
+  let parseStorage = [];
 
-  if (!localStorageTodos) {
-    localStorage.setItem('TODO_APP_v1', JSON.stringify([]));//save empty string
-    parseTodos = [];
+  if (!localStorageItem) {
+    localStorage.setItem(storageName, JSON.stringify(initialValue));//save empty string
+    parseStorage = initialValue;
   } else {
-    parseTodos = JSON.parse(localStorageTodos);//string to array
+    parseStorage = JSON.parse(localStorageItem);//string to array
   }
 
+  const [storage, setStorage] = React.useState(parseStorage);
 
+  const saveStorage = (newStorage) => {
+   localStorage.setItem(storageName, JSON.stringify(newStorage));
+   setStorage(newStorage);
+ };
+
+  return [storage, saveStorage];
+}
+
+
+function App() {
   const [search, setSearch] = React.useState('');//state to todoSearch
-  const [todos, setTodo] = React.useState(parseTodos);//state to todoItem
+  const [todos, saveTodoState] = useLocalStorage('TODO_APP_v1', []);//state to todoItem
   
   //completed todo + total todo
   const completedTodos = todos.filter( (todoCompleted) => 
@@ -50,11 +60,6 @@ function App() {
     return lowerTodoSearch.includes(lowerSeach);//it keeps showing all because it returns true to an empty string
   }
   );
-
-  const saveTodoState = (newTodos) => {
-    localStorage.setItem('TODO_APP_v1', JSON.stringify(newTodos));
-    setTodo(newTodos);
-  };
 
   //complete todos
   const completeTodo = (text) => {
