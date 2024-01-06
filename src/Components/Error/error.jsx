@@ -3,7 +3,9 @@ import './error.css'
 
 function Error(){
 	return (
-		<p>Error.......</p>
+		<section className='error__container'>
+			<p className='error__text'>Error App</p>
+		</section>
 	);
 }
 
