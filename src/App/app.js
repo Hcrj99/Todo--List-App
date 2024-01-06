@@ -9,19 +9,7 @@ import { useLocalStorage } from '../hooks/uselocalstorage';
 import '../styles/App.css';
 import React from 'react';
 import { EmptyTodo } from '../Components/Emptytodo/emptytodo';
-
-// const defaultTodos = [
-//   { text: 'Todo1', completed: true, type: 'sports'},
-//   { text: 'Todo2', completed: false, type: 'sports'},
-//   { text: 'Todo3', completed: true, type: 'sports'},
-//   { text: 'Todo4', completed: false, type: 'sports'},
-//   { text: 'Todo5', completed: false, type: 'sports'},
-//   { text: 'Todo6', completed: false, type: 'sports'},
-//   { text: 'Todo7', completed: false, type: 'sports'},
-// ];
-// localStorage.setItem('TODO_APP_v1', JSON.stringify(defaultTodos));
-// localStorage.removeItem('TODO_APP_v1');
-
+import { Modal } from '../Components/Modal/modal';
 
 function App() {
   const [search, setSearch] = React.useState('');//state to todoSearch
@@ -64,6 +52,9 @@ function App() {
     saveTodoState(newTodos);
   };
 
+  //modal
+  const [openModal, setOpenModal] = React.useState(false);
+
   return (
     <React.Fragment>
       <TodoCounter todoCompleted={completedTodos} totalTodo={totalTodos} />
@@ -85,6 +76,9 @@ function App() {
         )}
       </TodoChart>
       <TodoAddButton />
+      {openModal && (
+        <Modal></Modal>
+      )}
     </React.Fragment>
   );
 }
