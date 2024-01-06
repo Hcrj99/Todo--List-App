@@ -22,7 +22,10 @@ import React from 'react';
 
 function App() {
   const [search, setSearch] = React.useState('');//state to todoSearch
-  const [todos, saveTodoState] = useLocalStorage('TODO_APP_v1', []);//state to todoItem
+  const {storage :todos, 
+        saveStorage :saveTodoState, 
+        loading, 
+        error} = useLocalStorage('TODO_APP_v1', []);//state to todoItem
   
   //completed todo + total todo
   const completedTodos = todos.filter( (todoCompleted) => 
@@ -42,7 +45,7 @@ function App() {
   const completeTodo = (text) => {
     const newTodos = [...todos];//copy todos
     const todoIndex = newTodos.findIndex(
-      (todo) => todo.text == text
+      (todo) => todo.text === text
     );
     newTodos[todoIndex].completed = true;
     saveTodoState(newTodos);
@@ -52,7 +55,7 @@ function App() {
   const deleteTodo = (text) => {
     const newTodos = [...todos];//copy todos
     const todoIndex = newTodos.findIndex(
-      (todo) => todo.text == text
+      (todo) => todo.text === text
     );
     newTodos.splice(todoIndex,1);//delete todo
     saveTodoState(newTodos);
@@ -63,6 +66,10 @@ function App() {
       <TodoCounter todoCompleted={completedTodos} totalTodo={totalTodos} />
       <TodoSearch search={search} setSearch={setSearch}/>
       <TodoChart>
+        {loading && <p>Loading......</p>}
+        {error && <p>Error.......</p>}
+        {(!loading && searchTodos.length === 0) && <p>Create ToDo</p>}
+
         {searchTodos.map( todo => 
           <TodoItem 
           key={todo.text} 
