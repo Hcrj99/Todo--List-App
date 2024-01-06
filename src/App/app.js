@@ -69,9 +69,9 @@ function App() {
       <TodoCounter todoCompleted={completedTodos} totalTodo={totalTodos} />
       <TodoSearch search={search} setSearch={setSearch}/>
       <TodoChart>
-        {loading && <Loading/>}
+        {loading && !error && <Loading/>}
         {error && <Error/>}
-        {(!loading && searchTodos.length === 0) && <EmptyTodo/>}
+        {(!loading && searchTodos.length === 0) && (!error) && <EmptyTodo/>}
 
         {searchTodos.map( todo => 
           <TodoItem 
