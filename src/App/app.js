@@ -1,3 +1,5 @@
+import { Loading } from '../Components/Loading/loading';
+import { Error } from '../Components/Error/error'
 import { TodoAddButton } from '../Components/Todoadd/todoadd';
 import { TodoChart } from '../Components/Todochart/todochart';
 import { TodoCounter } from '../Components/Todocounter/todocounter';
@@ -6,6 +8,7 @@ import { TodoSearch } from '../Components/Todosearch/todosearch';
 import { useLocalStorage } from '../hooks/uselocalstorage';
 import '../styles/App.css';
 import React from 'react';
+import { EmptyTodo } from '../Components/Emptytodo/emptytodo';
 
 // const defaultTodos = [
 //   { text: 'Todo1', completed: true, type: 'sports'},
@@ -66,9 +69,9 @@ function App() {
       <TodoCounter todoCompleted={completedTodos} totalTodo={totalTodos} />
       <TodoSearch search={search} setSearch={setSearch}/>
       <TodoChart>
-        {loading && <p>Loading......</p>}
-        {error && <p>Error.......</p>}
-        {(!loading && searchTodos.length === 0) && <p>Create ToDo</p>}
+        {loading && <Loading/>}
+        {error && <Error/>}
+        {(!loading && searchTodos.length === 0) && <EmptyTodo/>}
 
         {searchTodos.map( todo => 
           <TodoItem 
