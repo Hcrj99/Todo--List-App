@@ -36,6 +36,7 @@ textarea {
 	font-size: 1rem;
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;	
 	border: 1px solid rgb(255, 94, 0);
+	text-align: center;
 }
 
 
@@ -92,7 +93,6 @@ textarea {
 	width: 120px;
 	font-size: 1rem;
 }
-
 
 .form__select {
 	width: 80px;

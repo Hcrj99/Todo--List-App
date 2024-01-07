@@ -79,7 +79,7 @@ function App() {
       <TodoAddButton setOpenModal={setOpenModal}/>
       {openModal && (
         <Modal>
-          <TodoForm/>
+          <TodoForm setOpenModal={setOpenModal}/>
         </Modal>
       )}
     </React.Fragment>
