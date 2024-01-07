@@ -74,7 +74,7 @@ function App() {
       <TodoChart>
         {loading && !error && <Loading/>}
         {error && <Error/>}
-        {(!loading && searchTodos.length === 0) && (!error) && <EmptyTodo/>}
+        {(!loading && searchTodos.length === 0) && (!error) && (!search) && <EmptyTodo/>}
 
         {searchTodos.map( todo => 
           <TodoItem 
