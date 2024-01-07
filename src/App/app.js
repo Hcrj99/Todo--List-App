@@ -10,8 +10,9 @@ import '../styles/App.css';
 import React from 'react';
 import { EmptyTodo } from '../Components/Emptytodo/emptytodo';
 import { Modal } from '../Components/Modal/modal';
-import { TodoForm } from '../Components/Fomrtodo/formtodo';
+import { TodoForm } from '../Components/Formtodo/formtodo';
 import { DontResult } from '../Components/Dontresult/dontresult';
+import { Congratulations } from '../Components/congratulations/congratulations';
 
 function App() {
   const [search, setSearch] = React.useState('');//state to todoSearch
@@ -56,6 +57,7 @@ function App() {
 
   //modal
   const [openModal, setOpenModal] = React.useState(false);
+  const [openModalC, setOpenModalC] = React.useState(false);
 
   //add ToDo
   const addTodo = (text, type) => {
@@ -70,7 +72,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <TodoCounter todoCompleted={completedTodos} totalTodo={totalTodos} />
+      <TodoCounter todoCompleted={completedTodos} totalTodo={totalTodos} setOpenModalC={setOpenModalC}/>
       <TodoSearch search={search} setSearch={setSearch}/>
       <TodoChart>
         {loading && !error && <Loading/>}
@@ -90,6 +92,11 @@ function App() {
         )}
       </TodoChart>
       <TodoAddButton setOpenModal={setOpenModal}/>
+      {openModalC && (
+        <Modal>
+          <Congratulations setOpenModalC={setOpenModalC}/>
+        </Modal>
+      )}
       {openModal && (
         <Modal>
           <TodoForm setOpenModal={setOpenModal} addTodo={addTodo}/>

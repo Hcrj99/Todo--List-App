@@ -15,6 +15,7 @@ body {
 	justify-content: center;
 	background-color: rgb(14, 13, 13);
 	color: azure;
+	user-select: none;
 }
 
 #root {
