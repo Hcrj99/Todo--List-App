@@ -78,3 +78,30 @@ textarea {
 	75% {border-color: rgb(255, 110, 0);}
 	100% {border-color:rgb(255, 60, 0);}
 }
+
+.type__container {
+	width: 90%;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.type__container label {
+	width: 120px;
+	font-size: 1rem;
+}
+
+
+.form__select {
+	width: 80px;
+	height: 25px;
+	border: 1px solid rgb(255, 94, 0);
+	border-radius: 5px;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;	
+	background-color: rgb(255, 94, 0);
+	color: azure;
+	font-size: 1rem;
+	user-select: none;
+}
