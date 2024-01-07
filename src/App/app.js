@@ -11,6 +11,7 @@ import React from 'react';
 import { EmptyTodo } from '../Components/Emptytodo/emptytodo';
 import { Modal } from '../Components/Modal/modal';
 import { TodoForm } from '../Components/Fomrtodo/formtodo';
+import { DontResult } from '../Components/Dontresult/dontresult';
 
 function App() {
   const [search, setSearch] = React.useState('');//state to todoSearch
@@ -75,6 +76,7 @@ function App() {
         {loading && !error && <Loading/>}
         {error && <Error/>}
         {(!loading && searchTodos.length === 0) && (!error) && (!search) && <EmptyTodo/>}
+        {(search && searchTodos.length === 0) && <DontResult/>}
 
         {searchTodos.map( todo => 
           <TodoItem 
