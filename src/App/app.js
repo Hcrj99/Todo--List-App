@@ -10,6 +10,7 @@ import '../styles/App.css';
 import React from 'react';
 import { EmptyTodo } from '../Components/Emptytodo/emptytodo';
 import { Modal } from '../Components/Modal/modal';
+import { TodoForm } from '../Components/Fomrtodo/formtodo';
 
 function App() {
   const [search, setSearch] = React.useState('');//state to todoSearch
@@ -75,9 +76,11 @@ function App() {
           />
         )}
       </TodoChart>
-      <TodoAddButton />
+      <TodoAddButton setOpenModal={setOpenModal}/>
       {openModal && (
-        <Modal></Modal>
+        <Modal>
+          <TodoForm/>
+        </Modal>
       )}
     </React.Fragment>
   );

@@ -24,6 +24,7 @@
 	animation: changeColor 3s infinite;
     color: rgb(255, 209, 2);
 	box-shadow: 0 0 10px rgb(255, 60, 0);
+    z-index: 1;
 }
 
 .button__contanier:hover{

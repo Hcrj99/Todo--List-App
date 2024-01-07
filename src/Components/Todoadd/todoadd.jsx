@@ -1,12 +1,11 @@
 import './todoadd.css'
 
-function TodoAddButton () {
+function TodoAddButton ( { setOpenModal } ) {
 	return(
 		<div className='add__contanier'>
 		<button className='button__contanier'
-		onClick={ (event) => {
-			console.log("clik");
-			console.log(event.target);
+		onClick={ () => {
+			setOpenModal(state => !state);
 		}}>+</button>
 		</div>
 	);

@@ -41,7 +41,6 @@
 .empty__arrowBottom:before {
 	border-top: 16px solid #ff7300;
 	bottom: -17px;
-	z-index: 1;
 }
 
 @keyframes changeColora {
