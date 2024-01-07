@@ -12,6 +12,7 @@
 	align-items: center;
 	animation: changeColor 3s infinite;
 	box-shadow: 0 0 15px rgb(255, 60, 0);
+	background-color: black;
 }
 
 @keyframes changeColor {
@@ -104,4 +105,5 @@ textarea {
 	color: azure;
 	font-size: 1rem;
 	user-select: none;
+	cursor: pointer;
 }

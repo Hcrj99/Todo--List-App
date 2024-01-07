@@ -56,6 +56,17 @@ function App() {
   //modal
   const [openModal, setOpenModal] = React.useState(false);
 
+  //add ToDo
+  const addTodo = (text, type) => {
+    const newTodos = [...todos];//copy todos
+    newTodos.push({
+      text,
+      type,
+      completed: false,
+    });
+    saveTodoState(newTodos);
+  }
+
   return (
     <React.Fragment>
       <TodoCounter todoCompleted={completedTodos} totalTodo={totalTodos} />
@@ -79,7 +90,7 @@ function App() {
       <TodoAddButton setOpenModal={setOpenModal}/>
       {openModal && (
         <Modal>
-          <TodoForm setOpenModal={setOpenModal}/>
+          <TodoForm setOpenModal={setOpenModal} addTodo={addTodo}/>
         </Modal>
       )}
     </React.Fragment>

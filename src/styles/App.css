@@ -26,6 +26,7 @@ body {
 	border-radius: 10px;
 	animation: changeColor 3s infinite;
 	box-shadow: 1px 5px 30px rgb(255, 60, 0);
+	z-index: 1;
 }
 
 @keyframes changeColor {
@@ -44,6 +45,5 @@ body {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	z-index: 0;
 }
 
