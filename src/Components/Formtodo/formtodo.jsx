@@ -51,6 +51,7 @@ function TodoForm ( {setOpenModal, addTodo} ) {
 					<option value='Social'>Social</option>
 					<option value='Home'>Home</option>
 					<option value='Money'>Money</option>
+					<option value='Work'>Work</option>
 				</select>
 			</div>
 			<div className='buttons__container'>

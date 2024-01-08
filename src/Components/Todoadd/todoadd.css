@@ -20,9 +20,9 @@
     cursor: pointer;
     font-size: 6rem;
     transform: rotate(0);
-    background-color: rgb(204, 78, 6);
+    background: linear-gradient(45deg, rgb(39, 32, 32), rgb(158, 55, 7));
 	animation: changeColor 3s infinite;
-    color: rgb(255, 209, 2);
+    color: rgb(255, 143, 37);
 	box-shadow: 0 0 10px rgb(255, 60, 0);
     z-index: 1;
 }
