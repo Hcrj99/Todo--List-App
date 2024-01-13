@@ -3,6 +3,7 @@
 	text-align: center;
 	font-size: 3.5rem;
 	user-select: none;
+	color:  rgb(250, 121, 0);
 }
 
 .todocounter__title {
@@ -16,6 +17,7 @@
 	font-size: 1.3rem;
 	margin-bottom: 20px;
 	user-select: none;
+	color:  rgb(250, 121, 0);
 }
 
 .todocounter__app:hover{
@@ -33,7 +35,6 @@
 #progress::-webkit-progress-value {
 	background: linear-gradient(to right, red, rgb(255, 115, 0), rgb(255, 217, 0)); /* Gradiente de colores */
 	border-radius: 5px;
-	
 }
   
 #progress::-moz-progress-bar {
