@@ -1,3 +1,17 @@
+
+# ToDo List APP
+
+Application developed with React, the main functionality is to add desired tasks with the characteristic of what type of task is being implemented, for example, a work, health, home, family task, among many other types, in addition to being able to search for the added tasks and verify how many of the total tasks have been completed, and being able to delete them or unmark them as completed at any time, the tasks will also be saved when the user returns and enters the application again.
+
+
+
+
+## Authors
+
+- [@hcrj99](https://github.com/Hcrj99)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
