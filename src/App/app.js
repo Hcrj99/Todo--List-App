@@ -9,19 +9,10 @@ import { useLocalStorage } from '../hooks/uselocalstorage';
 import '../styles/App.css';
 import React from 'react';
 import { EmptyTodo } from '../Components/Emptytodo/emptytodo';
-
-// const defaultTodos = [
-//   { text: 'Todo1', completed: true, type: 'sports'},
-//   { text: 'Todo2', completed: false, type: 'sports'},
-//   { text: 'Todo3', completed: true, type: 'sports'},
-//   { text: 'Todo4', completed: false, type: 'sports'},
-//   { text: 'Todo5', completed: false, type: 'sports'},
-//   { text: 'Todo6', completed: false, type: 'sports'},
-//   { text: 'Todo7', completed: false, type: 'sports'},
-// ];
-// localStorage.setItem('TODO_APP_v1', JSON.stringify(defaultTodos));
-// localStorage.removeItem('TODO_APP_v1');
-
+import { Modal } from '../Components/Modal/modal';
+import { TodoForm } from '../Components/Formtodo/formtodo';
+import { DontResult } from '../Components/Dontresult/dontresult';
+import { Congratulations } from '../Components/congratulations/congratulations';
 
 function App() {
   const [search, setSearch] = React.useState('');//state to todoSearch
@@ -50,7 +41,12 @@ function App() {
     const todoIndex = newTodos.findIndex(
       (todo) => todo.text === text
     );
-    newTodos[todoIndex].completed = true;
+    if(newTodos[todoIndex].completed === false){
+      newTodos[todoIndex].completed = true;
+    }
+    else {
+      newTodos[todoIndex].completed = false;
+    }
     saveTodoState(newTodos);
   };
 
@@ -64,14 +60,30 @@ function App() {
     saveTodoState(newTodos);
   };
 
+  //modal
+  const [openModal, setOpenModal] = React.useState(false);
+  const [openModalC, setOpenModalC] = React.useState(false);
+
+  //add ToDo
+  const addTodo = (text, type) => {
+    const newTodos = [...todos];//copy todos
+    newTodos.push({
+      text,
+      type,
+      completed: false,
+    });
+    saveTodoState(newTodos);
+  }
+
   return (
     <React.Fragment>
-      <TodoCounter todoCompleted={completedTodos} totalTodo={totalTodos} />
+      <TodoCounter todoCompleted={completedTodos} totalTodo={totalTodos} setOpenModalC={setOpenModalC}/>
       <TodoSearch search={search} setSearch={setSearch}/>
       <TodoChart>
         {loading && !error && <Loading/>}
         {error && <Error/>}
-        {(!loading && searchTodos.length === 0) && (!error) && <EmptyTodo/>}
+        {(!loading && searchTodos.length === 0) && (!error) && (!search) && <EmptyTodo/>}
+        {(search && searchTodos.length === 0) && <DontResult/>}
 
         {searchTodos.map( todo => 
           <TodoItem 
@@ -84,7 +96,17 @@ function App() {
           />
         )}
       </TodoChart>
-      <TodoAddButton />
+      <TodoAddButton setOpenModal={setOpenModal}/>
+      {openModalC && (
+        <Modal>
+          <Congratulations setOpenModalC={setOpenModalC}/>
+        </Modal>
+      )}
+      {openModal && (
+        <Modal>
+          <TodoForm setOpenModal={setOpenModal} addTodo={addTodo}/>
+        </Modal>
+      )}
     </React.Fragment>
   );
 }

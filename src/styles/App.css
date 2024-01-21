@@ -15,6 +15,7 @@ body {
 	justify-content: center;
 	background-color: rgb(14, 13, 13);
 	color: azure;
+	user-select: none;
 }
 
 #root {
@@ -26,6 +27,7 @@ body {
 	border-radius: 10px;
 	animation: changeColor 3s infinite;
 	box-shadow: 1px 5px 30px rgb(255, 60, 0);
+	z-index: 1;
 }
 
 @keyframes changeColor {
@@ -36,4 +38,13 @@ body {
 	100% {border-color:rgb(255, 60, 0);}
 }
 
+#modal {
+	width: 95%;
+	max-width: 700px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
 
