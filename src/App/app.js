@@ -41,7 +41,7 @@ function App() {
     const todoIndex = newTodos.findIndex(
       (todo) => todo.text === text
     );
-    if(newTodos[todoIndex].completed == false){
+    if(newTodos[todoIndex].completed === false){
       newTodos[todoIndex].completed = true;
     }
     else {
